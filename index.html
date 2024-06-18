@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <!-- Instruction -->
+        <section id="instruction">
+          <header>
+            <p>Welcome To</p>
+            <p>The Ultimate</p>
+
+            <h1>TIC TAC TOE</h1>
+          </header>
+          <article>
+            <button onclick="playGame()" id="play">Play</button>
+          </article>
+        </section>
+
+        <!-- Player Selection -->
+        <section id="player-selection" style="display: none">
+          <article id="num-of-players">
+            <header>
+              <h1>NUMBER OF PLAYERS?</h1>
+            </header>
+            <div id="player-selection-btns-div">
+              <button id="one-player" onclick="numOfPlayers(event)">
+                One Player
+              </button>
+              <button id="two-players" onclick="numOfPlayers(event)">
+                Two Players
+              </button>
+            </div>
+          </article>
+
+          <article id="identity" style="display: none">
+            <header>
+              <h1>
+                WHO DO YOU WANT TO<br />
+                PLAY AS?
+              </h1>
+            </header>
+            <div>
+              <button id="X" onclick="selectPlayer(event)">X</button>
+              <button id="O" onclick="selectPlayer(event)">O</button>
+
+              <p id="num-of-players" onclick="changeNumOfPlayers()">
+                CHANGE NUMBER OF PLAYERS
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Display Result -->
+        <div id="result" style="display: none">
+          <h2 id="winner-text"></h2>
+          <button id="replay" onclick="replay()">Replay</button>
+          <button id="change-player" onclick="changePlayer()">
+            Change Player
+          </button>
+        </div>
+
+        <!-- Game Board -->
+        <section id="game-board" style="display: none">
+          <div id="score-board">
+            <div></div>
+            <div id="">
+              <b>Player 1:</b>
+              <span id="player-one-score">0</span>
+            </div>
+            <div id="">
+              <b>Player 2:</b>
+              <span id="player-two-score">0</span>
+            </div>
+            <div></div>
+          </div>
+          <div class="row" id="game-boxes">
+            <div class="item" id="1" onclick="playerOne(event)"></div>
+            <div class="item" id="2" onclick="playerOne(event)"></div>
+            <div class="item" id="3" onclick="playerOne(event)"></div>
+            <div class="item" id="4" onclick="playerOne(event)"></div>
+            <div class="item" id="5" onclick="playerOne(event)"></div>
+            <div class="item" id="6" onclick="playerOne(event)"></div>
+            <div class="item" id="7" onclick="playerOne(event)"></div>
+            <div class="item" id="8" onclick="playerOne(event)"></div>
+            <div class="item" id="9" onclick="playerOne(event)"></div>
+          </div>
+          <p id="restart" onclick="replay()">RESTART GAME</p>
+        </section>
+      </main>
+      <audio id="human-click" src="/assets/audio/game-jump-coin-216.wav">
+        Human Click
+      </audio>
+      <audio id="computer-click" src="assets/audio/select-click-1109.wav">
+        Computer Click
+      </audio>
+      <audio id="audio-win" src="assets/audio/applause4.mp3">Win</audio>
+      <audio id="audio-lose" src="assets/audio/lose-boo.mp3">Lose</audio>
+      <audio id="audio-draw" src="assets/audio/draw-game.wav">Draw</audio>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
